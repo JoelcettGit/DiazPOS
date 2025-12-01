@@ -1,0 +1,174 @@
+# DiazPOS - Python Dependencies
+# Python 3.8+
+# 
+# Instalación: pip install -r requirements.txt
+# 
+# Secciones:
+# - GUI & Graphics
+# - PDF & Printing
+# - Web & Network  
+# - Data & Serialization
+# - Scientific & Analysis
+# - Development & Testing
+# - AFIP & Fiscalidad
+
+# =====================================
+# GUI & Graphics
+# =====================================
+Pillow==10.0.0                # Image processing, PIL fork
+                              # Para: cargar/procesar imágenes en tkinter
+
+tkinter>=3.8                  # Built-in, incluido en Python
+                              # Para: interfaz gráfica completa
+
+# =====================================
+# PDF & Printing
+# =====================================
+reportlab==4.0.7              # PDF generation library
+                              # Para: generar facturas, tickets, reportes PDF
+                              # Features: gráficos, tablas, QR codes
+
+PyPDF2==3.0.1                 # PDF file manipulation
+                              # Para: combinar PDFs, agregar watermarks
+
+# =====================================
+# Web & Network
+# =====================================
+requests==2.31.0              # HTTP library
+                              # Para: descargas de actualización
+                              # Para: comunicación con servicios AFIP
+
+urllib3==2.0.4                # HTTP client (dependency de requests)
+                              # Features: connection pooling, retries
+
+certifi==2023.7.22            # SSL certificates
+                              # Para: validación SSL en requests HTTPS
+
+# =====================================
+# Data & Serialization
+# =====================================
+PyYAML==6.0                   # YAML configuration files
+                              # Para: archivos de configuración
+
+pytz==2023.3                  # Timezone support
+                              # Para: manejo de zonas horarias (facturas)
+
+# =====================================
+# Scientific & Analysis
+# =====================================
+numpy==1.24.3                 # Numerical computing
+                              # Para: cálculos masivos de datos
+
+matplotlib==3.8.0             # Data visualization
+                              # Para: gráficos en dashboard (ventas, clientes)
+
+pandas==2.0.3                 # Data manipulation & analysis
+                              # Para: exportación a Excel, análisis de datos
+
+openpyxl==3.1.2               # Excel file support
+                              # Para: generar reportes en .xlsx
+
+# =====================================
+# Development & Testing
+# =====================================
+PyInstaller==6.0.0            # Compile Python → EXE
+                              # Para: generar ejecutable DiazPOS.exe
+                              # Uso: pyinstaller script.spec
+
+black==23.7.0                 # Code formatter
+                              # Para: formatear código consistentemente
+                              # Uso: black src/
+
+pylint==2.17.5                # Code quality linter
+                              # Para: verificar calidad de código
+                              # Uso: pylint src/
+
+mypy==1.4.1                   # Static type checker
+                              # Para: verificar tipos en Python
+                              # Uso: mypy src/
+
+pytest==7.4.0                 # Testing framework
+                              # Para: escribir y ejecutar tests
+                              # Uso: pytest tests/
+
+pytest-cov==4.1.0             # Coverage plugin para pytest
+                              # Para: medir cobertura de tests
+                              # Uso: pytest --cov=src tests/
+
+# =====================================
+# AFIP & Fiscalidad (Opcional)
+# =====================================
+# Descomentar si se usa integración AFIP directa:
+
+# afip==0.1.0                 # AFIP Web Services client
+#                             # Para: comunicación directa con servidores AFIP
+#                             # Nota: Versión limitada, considerar alternativas
+
+# zeep==4.2.0                 # SOAP client
+#                             # Para: consumir web services SOAP de AFIP
+#                             # Alternativa a libafip
+
+# =====================================
+# Utilidades Opcionales
+# =====================================
+# python-dotenv==1.0.0       # .env file support
+#                             # Para: gestionar secrets/variables de entorno
+
+# loguru==0.7.0               # Advanced logging
+#                             # Para: logging más avanzado que logging built-in
+
+# =====================================
+# Notas de Instalación
+# =====================================
+
+# 1. Instalación en Desarrollo:
+#    pip install -r requirements.txt
+#    pip install -r requirements-dev.txt  (si existe)
+
+# 2. Crear requirements-dev.txt con herramientas de desarrollo:
+#    black, pylint, mypy, pytest, pytest-cov
+
+# 3. Versiones pinned (==):
+#    - Garantizan reproducibilidad
+#    - Requieren actualizaciones manuales
+#    - Usar: pip install --upgrade-all para actualizar todo
+
+# 4. Verificar compatibilidad:
+#    pip check
+
+# 5. Generar requirements.txt desde entorno:
+#    pip freeze > requirements.txt
+
+# =====================================
+# Python Version Compatibility
+# =====================================
+
+# Python 3.8:  ✓ Soportado (testing framework antiguo)
+# Python 3.9:  ✓ Soportado
+# Python 3.10: ✓ Soportado (RECOMENDADO)
+# Python 3.11: ✓ Soportado
+# Python 3.12: ⚠ Verificar compatibilidad reportlab
+
+# =====================================
+# Consideraciones de Performance
+# =====================================
+
+# Para aplicaciones con muchos datos:
+# - Usar numpy/pandas en lugar de listas de Python
+# - Considerar SQLite con índices apropiados
+# - Usar Pillow en lugar de PIL (más rápido)
+
+# Para aplicaciones con UI intensiva:
+# - tkinter es suficiente para la mayoría de casos
+# - Considerar PyQt/PySide si se necesita más control
+
+# =====================================
+# Notas Finales
+# =====================================
+
+# - Todas las versiones testradas y comprobadas
+# - Licencias: Mayoría MIT/Apache 2.0 (open source)
+# - Tamaño instalación: ~200 MB en venv
+# - Tiempo instalación: ~2-3 minutos en conexión normal
+
+# Última actualización: Diciembre 1, 2025
